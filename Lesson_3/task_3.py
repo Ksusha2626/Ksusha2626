@@ -1,17 +1,17 @@
 """В массиве случайных целых чисел поменять местами минимальный и максимальный элементы."""
 import random
 
-ARRAY = [random.randint(0, 100) for _ in range(0, 10)]
-print(ARRAY)
+array = [random.randint(0, 100) for _ in range(0, 10)]
+print(array)
 
-m = 0
-low = ARRAY[0]
-for i in ARRAY:
-    if i > m:
-        m = i
-    if i <= low:
-        low = i
-ARRAY[ARRAY.index(low)] = m
-ARRAY[ARRAY.index(m)] = low
-print(ARRAY)
-print(f'Максимальное число массива - {m}\nМинимальное число массива - {low}')
+idx_max = 0
+idx_min = 0
+for i in range(len(array)):
+    if array[i] > array[idx_max]:
+        idx_max = i
+    if array[i] <= array[idx_min]:
+        idx_min = i
+
+array[idx_min], array[idx_max] = array[idx_max], array[idx_min]
+print(array)
+

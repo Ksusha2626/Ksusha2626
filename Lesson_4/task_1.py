@@ -18,6 +18,7 @@ def freq_1(arr):
             max_count = x
             num = i
         x = 0
+    return num, max_count
 
 
 # print(timeit.timeit('freq_1([random.randint(0, 10) for _ in range(10)])', number=100, globals=globals()))  # 0.0020055
@@ -55,6 +56,7 @@ def freq_2(arr):
         if counter[item] > frequency:
             frequency = counter[item]
             num = item
+    return num, frequency
 
 
 # print(timeit.timeit('freq_2([random.randint(0, 10) for _ in range(10)])', number=100, globals=globals()))  # 0.0020159
@@ -85,6 +87,7 @@ def freq_3(arr):
         if el > frequency:
             frequency = el
             num = item
+    return num, frequency
 
 
 # print(timeit.timeit('freq_3([random.randint(0, 10) for _ in range(10)])', number=100, globals=globals()))  # 0.0033726
